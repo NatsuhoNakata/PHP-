@@ -1,30 +1,34 @@
 <?php
 // Q1 変数と文字列
 $name = '「中田」';
-echo  '私の名前は' .$name . 'です。';
+echo  '私の名前は' . $name . 'です。';
 
 // Q2 四則演算
 $num = 5 * 4;
-echo $num. "\n";
+echo $num . "\n";
 
 $half = $num / 2;
-echo $half. "\n";
+echo $half . "\n";
 
 // Q3 日付操作
-echo "現在の時刻は " . date("Y-m-d H:i:s") . " です。";
+echo '現在の時刻は ' . date("Y-m-d H:i:s") . ' です。';
 
 // Q4 条件分岐-1 if文
-$device = "windows";
+$device = "windows";  
+$os = "";  
 
 if ($device === "windows") {
-    echo "使用OSは、windowsです。";
-} else {
-    if ($device === "mac") {
-        echo "使用OSは、macです。";
-    } else {
-        echo "どちらでもありません。";
-    }
+    $os = "windows";
+} elseif ($device === "mac") {
+    $os = "mac";
 }
+
+if ($os !== "") {
+    echo '使用OSは、' . $os . 'です。';
+} else {
+    echo 'どちらでもありません。';
+}
+
 
 // Q5 条件分岐-2 三項演算子
 $age = 20; 
@@ -45,7 +49,7 @@ $kanto = [
     '埼玉県'   => 'さいたま市',
     '茨城県'   => '水戸市',
     '栃木県'   => '宇都宮市',
-    '群馬県'   => '前橋市'
+    '群馬県'   => '前橋市',
 ];
 
 foreach ($kanto as $capital) {
@@ -70,11 +74,11 @@ $prefectures = [
     "北海道"   => "札幌市"      
 ];
 
-$kanto = ["東京都", "神奈川県", "千葉県", "埼玉県", "茨城県", "栃木県", "群馬県"];
+$kanto = ['東京都', '神奈川県', '千葉県', '埼玉県', '茨城県', '栃木県', '群馬県'];
 
 foreach ($prefectures as $name => $capital) {
     if (in_array($name, $kanto)) {
-        echo $name . "の県庁所在地は、" . $capital . "です。\n";
+        echo $name . "の県庁所在地は、" . $capital . です。\n";
     } else {
         echo $name . "は関東地方ではありません。\n";
     }
@@ -82,11 +86,11 @@ foreach ($prefectures as $name => $capital) {
 
 // Q10 関数-1
 function hello($name) {
-    return $name . "さん、こんにちは。";
+    return $name . 'さん、こんにちは。';
 }
 
-echo hello("金谷") . "\n";
-echo hello("安藤") . "\n";
+echo hello('金谷') . "\n";
+echo hello('安藤') . "\n";
 
 // Q11 関数-2
 function calcTaxInPrice($price) {
@@ -97,14 +101,14 @@ $price = 1000;
 
 $taxInPrice = calcTaxInPrice($price);
 
-echo $price . "の商品の税込価格は" . $taxInPrice . "円です。";
+echo $price . 'の商品の税込価格は' . $taxInPrice . '円です。';
 
 // Q12 関数とif文
 function distinguishNum($num) {
     if ($num % 2 === 0) {
-        return $num . "は偶数です。";
+        return $num . 'は偶数です。';
     } else {
-        return $num . "は奇数です。";
+        return $num . 'は奇数です。';
     }
 }
 
@@ -116,13 +120,13 @@ function evaluateGrade($grade) {
     switch ($grade) {
         case 'A':
         case 'B':
-            return "合格です。";
+            return '合格です。';
         case 'C':
-            return "合格ですが追加課題があります。";
+            return '合格ですが追加課題があります。';
         case 'D':
-            return "不合格です。";
+            return '不合格です。';
         default:
-            return "判定不明です。講師に問い合わせてください。";
+            return '判定不明です。講師に問い合わせてください。';
     }
 }
 
