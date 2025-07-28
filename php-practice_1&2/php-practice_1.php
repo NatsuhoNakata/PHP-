@@ -14,20 +14,11 @@ echo $half . "\n";
 echo '現在の時刻は ' . date("Y-m-d H:i:s") . ' です。';
 
 // Q4 条件分岐-1 if文
-$device = "windows";  
-$os = "";  
+$device = "windows";
 
-if ($device === "windows") {
-    $os = "windows";
-} elseif ($device === "mac") {
-    $os = "mac";
-}
+$os = ($device === "windows" || $device === "mac") ? $device : "";
 
-if ($os !== "") {
-    echo '使用OSは、' . $os . 'です。';
-} else {
-    echo 'どちらでもありません。';
-}
+echo ($os !== "") ? '使用OSは、' . $os . 'です。' : 'どちらでもありません。';
 
 
 // Q5 条件分岐-2 三項演算子
